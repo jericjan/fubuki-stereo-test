@@ -1,0 +1,67 @@
+@import "compass/css3";
+img.fubuki{
+	position: absolute;
+    bottom: -75px;
+    left: 0;
+    width: 25vw;
+	animation: fubuki-anim 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+	
+}
+h1.title{
+	color: white;
+	animation: title 5s ease-in-out infinite;
+}
+@keyframes title {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+@keyframes fubuki-anim {
+  0% {transform: rotate(-10deg);;}
+  50% {transform: rotate(10deg);;}
+  100% {transform: rotate(-10deg);;}
+}
+.btn:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+body{
+   text-align:center;
+   padding:10%;
+   background: #1b1b1b;
+   font-family: 'Roboto', sans-serif;
+   overflow: hidden;
+}
+.btn{
+   transition: transform .2s;
+   cursor:pointer;
+   display:inline-block;
+   padding:30px;
+   background: #2ed2f7;
+   border-radius: 4px;
+   color: #fff;
+   text-transform:uppercase;
+   line-height:20px;
+   @include transition(box-shadow .25s ease);
+   &:after{
+      content:'';
+      display:inline-block;
+      color: #94a657;
+      background:#fff;
+      font-family: 'FontAwesome';
+      padding:3px;
+      border-radius: 50%;
+      height:20px;
+      width:20px;
+      margin-left:8px;
+      padding-left: 4.5px;
+      padding-right:1.5px;
+   }
+   &.playing{
+       &:after{
+         padding:3px;
+         content:'';
+      }
+	  
+
+
+
